@@ -51,7 +51,7 @@ La licence P2 est **par utilisateur**, et on l'assigne selon le **besoin fonctio
 | Soumis à une revue d'accès | ✅ Oui |
 | Existe, se connecte, ou membre d'un groupe | ❌ Non |
 
-> **Nuance (piège d'entrevue) :** l'accès conditionnel **s'applique même à un utilisateur non licencié** — Microsoft ne bloque pas techniquement. Mais pour être *conforme*, on licencie les utilisateurs qu'on cible. « Ça marche » ≠ « c'est conforme ».
+> **Nuance importante :** l'accès conditionnel **s'applique même à un utilisateur non licencié** — Microsoft ne bloque pas techniquement. Mais pour être *conforme*, on licencie les utilisateurs qu'on cible. « Ça marche » ≠ « c'est conforme ».
 
 ![Licence Microsoft Entra ID P2 assignée au compte d'administration dédié](captures/01-licence-p2-assignee.png)
 
@@ -117,7 +117,7 @@ Jusqu'ici, les règles sont **statiques**. Identity Protection ajoute une couche
 
 Exemples de signaux : IP anonyme (Tor), **voyage impossible**, IP liée à un malware, **identifiants trouvés dans une fuite** (dark web), pulvérisation de mots de passe.
 
-**Partage des rôles clé (point d'entrevue) :** **c'est Microsoft qui calcule et attribue le niveau** (Faible/Moyen/Élevé). **Nous, on fixe seulement le seuil de réaction.** Analogie : Microsoft est le détecteur de fumée qui *mesure* ; nous réglons *à partir de quel niveau on déclenche l'alarme*.
+**Point clé — qui décide quoi :** **c'est Microsoft qui calcule et attribue le niveau** (Faible/Moyen/Élevé). **Nous, on fixe seulement le seuil de réaction.** Analogie : Microsoft est le détecteur de fumée qui *mesure* ; nous réglons *à partir de quel niveau on déclenche l'alarme*.
 
 Les 3 rapports (Utilisateurs à risque, Connexions à risque, Détections de risques) étaient **vides** → tenant sain. C'est le **radar** de l'identité.
 
@@ -176,7 +176,7 @@ Les accès **s'accumulent** (changements d'équipe, départs, stages finis…) e
 
 **La revue réalisée :** Entra **recommandait « Refuser »** pour Alice (raison : *dernière connexion > 30 jours*). J'ai choisi d'**approuver** avec justification (rôle encore nécessaire).
 
-> **Point clé (entrevue) :** **la machine recommande, l'humain tranche.** Entra ne retire jamais seul — il propose une recommandation basée sur les données, mais le **réviseur reste responsable** de la décision finale. Tout est **tracé** (qui, quoi, quand, pourquoi) → piste d'audit pour la conformité.
+> **Point clé — la machine recommande, l'humain tranche.** Entra ne retire jamais seul — il propose une recommandation basée sur les données, mais le **réviseur reste responsable** de la décision finale. Tout est **tracé** (qui, quoi, quand, pourquoi) → piste d'audit pour la conformité.
 
 **Outil voisin à connaître :** pour **désactiver automatiquement un compte** quand une personne part (offboarding), ce n'est **pas** la revue d'accès mais les **Workflows de cycle de vie** (*Lifecycle Workflows*, Entra ID Governance) — workflow « leaver » déclenché par la date de départ. La revue d'accès retire des **accès** ; elle ne supprime pas le **compte**.
 
